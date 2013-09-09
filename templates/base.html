@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+    	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    	<title>Project A</title>
+    	<meta name="description" content="" />
+    	<meta name="keywords" content="" />
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="{{STATIC_URL}}css/master.css.scss" type="text/css" />
+            <!-- <link rel="stylesheet" href="{{STATIC_URL}}css/master.css" type="text/css" /> -->
+
+    </head>
+    <body>
+        <body>
+        <div class="container">
+            <div class="navbar">
+                <div class="navbar-inner">
+                    {% if  user %}
+                        <ul class="nav pull-left">
+                            </li><a href="/my_profile">My profile</a></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li><a href="/logout/">Logout</a></li>
+                        </ul>
+                    {% else %}
+                        <ul class="nav pull-left">
+                          <li><a href="/register/">Register</a></li>
+                        </ul>
+                        <ul class="nav pull-right">
+                            <li><a href="/logout/">Logout</a></li>
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+            <div role="main">
+                {% block main %}
+                {% endblock %}
+            </div>
+        </div>
+    </body>
+</html>
